@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>오늘 뭐 먹지</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <img src="character.png" class="character">
+
+    <div class="bubble">
+      <script>
+  const today = new Date().toISOString().slice(0, 10);
+
+  const screens = {
+    "2026-02-07": "🌱 오늘은 시작의 날",
+    "2026-02-08": "✨ 작은 행운이 있어",
+    "2026-02-09": "🌙 천천히 가도 괜찮아"
+  };
+
+  document.getElementById("content").innerText =
+    screens[today] || "📦 아직 준비된 화면이 없어요";
+</script>
+    </div>
+
+    <button onclick="location.href='menu.html'">
+      🍴 메뉴 추천해줘
+    </button>
+  </div>
+</body>
+</html>
