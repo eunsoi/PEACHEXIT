@@ -8,16 +8,19 @@
 </head>
 <body>
   <div class="container row">
-    <img src="character.png" class="character">
-
-    <div class="bubble">
-      매운 거 괜찮아?
-    </div>
+    <img id="character" class="character">
+    <div class="bubble" id="bubbleText"></div>
   </div>
 
   <div class="button-group">
     <button onclick="location.href='result.html?type=spicy'">🔥 매운 거</button>
     <button onclick="location.href='result.html?type=mild'">🙂 안 매운 거</button>
   </div>
+
+  <script src="character.js"></script>
+  <script>
+    document.getElementById("bubbleText").innerText =
+      "매운 거 괜찮아?";
+  </script>
 </body>
 </html>
