@@ -8,15 +8,13 @@
 </head>
 <body>
   <div class="container row">
-    <img src="character.png" class="character">
-
-    <div class="bubble" id="resultText"></div>
+    <img id="character" class="character">
+    <div class="bubble" id="bubbleText"></div>
   </div>
 
-  <button onclick="location.reload()">
-    싫어 다시 골라줘
-  </button>
+  <button onclick="location.reload()">싫어 다시 골라줘</button>
 
+  <script src="character.js"></script>
   <script>
     const spicyMenus = [
       "떡볶이",
@@ -34,13 +32,12 @@
       "우동"
     ];
 
-    const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(location.search);
     const type = params.get("type");
-
     const menus = type === "spicy" ? spicyMenus : mildMenus;
     const menu = menus[Math.floor(Math.random() * menus.length)];
 
-    document.getElementById("resultText").innerText =
+    document.getElementById("bubbleText").innerText =
       `오늘은 ${menu} 먹어라.\n그럼 ${menu}?`;
   </script>
 </body>
