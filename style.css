@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
   background: #fff6e5;
+  font-family: Arial, sans-serif;
   text-align: center;
 }
 
@@ -13,27 +13,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 16px;
 }
 
 .character {
-  width: 140px;
-  max-width: 40vw;
+  width: 150px;
+  max-width: 42vw;
 }
 
 .bubble {
   background: white;
   border-radius: 20px;
-  padding: 15px 20px;
-  max-width: 220px;
+  padding: 16px 20px;
+  max-width: 240px;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.5;
   white-space: pre-line;
 }
 
 button {
-  margin-top: 25px;
-  padding: 15px 25px;
+  margin-top: 24px;
+  padding: 15px 26px;
   font-size: 16px;
   border: none;
   border-radius: 30px;
@@ -45,7 +45,7 @@ button {
 .button-group {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 14px;
 }
 
 button:hover {
