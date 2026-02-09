@@ -11,23 +11,25 @@
     <img src="character.png" class="character">
 
     <div class="bubble">
-      <script>
-  const today = new Date().toISOString().slice(0, 10);
-
-  const screens = {
-    "2026-02-07": "🌱 오늘은 시작의 날",
-    "2026-02-08": "✨ 작은 행운이 있어",
-    "2026-02-09": "🌙 천천히 가도 괜찮아"
-  };
-
-  document.getElementById("content").innerText =
-    screens[today] || "📦 아직 준비된 화면이 없어요";
-</script>
+      <span id="content"></span>
     </div>
 
     <button onclick="location.href='menu.html'">
       🍴 메뉴 추천해줘
     </button>
   </div>
+
+  <script>
+    const today = new Date().toISOString().slice(0, 10);
+
+    const screens = {
+      "2026-02-07": "🌱 오늘은 시작의 날",
+      "2026-02-08": "✨ 작은 행운이 있어",
+      "2026-02-09": "🌙 천천히 가도 괜찮아"
+    };
+
+    document.getElementById("content").innerText =
+      screens[today] || "📦 아직 준비된 화면이 없어요";
+  </script>
 </body>
 </html>
