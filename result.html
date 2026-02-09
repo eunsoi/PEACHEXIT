@@ -12,36 +12,62 @@
     <div class="bubble" id="bubbleText"></div>
   </div>
 
-  <button onclick="location.reload()">싫어 다시 골라줘</button>
-  <br> </br>
+  <button onclick="reroll()">싫어 다시 골라줘</button>
+  <p> \n </p>
 <button onclick="location.href='index.html'">
     돌아가기
   </button>
   <script src="character.js"></script>
   <script>
-    const spicyMenus = [
-      "떡볶이",
-      "불닭볶음면",
-      "마라탕",
-      "김치찌개",
-      "매운 닭갈비"
-    ];
+  const spicyMenus = [
+    "떡볶이",
+    "불닭볶음면",
+    "마라탕",
+    "김치찌개",
+    "매운 닭갈비"
+  ];
 
-    const mildMenus = [
-      "돈까스",
-      "초밥",
-      "파스타",
-      "카레",
-      "우동"
-    ];
+  const mildMenus = [
+    "돈까스",
+    "초밥",
+    "파스타",
+    "카레",
+    "우동"
+  ];
 
-    const params = new URLSearchParams(location.search);
-    const type = params.get("type");
-    const menus = type === "spicy" ? spicyMenus : mildMenus;
+  const complainMessages = [
+    "아니 또 싫어?",
+    "그럼 뭐 먹을 건데…",
+    "에이 까다롭네",
+    "이번엔 진짜 괜찮은데",
+    "하… 다시 고른다?"
+  ];
+
+  const params = new URLSearchParams(location.search);
+  const type = params.get("type");
+  const menus = type === "spicy" ? spicyMenus : mildMenus;
+
+  const bubble = document.getElementById("bubbleText");
+
+  function pickMenu() {
     const menu = menus[Math.floor(Math.random() * menus.length)];
+    bubble.innerText = `오늘은 ${menu} 먹어라.\n그럼 ${menu}?`;
+  }
 
-    document.getElementById("bubbleText").innerText =
-      `오늘은 ${menu} 먹어라.`;
-  </script>
+  function reroll() {
+    // 1️⃣ 투덜거리기
+    const complain =
+      complainMessages[Math.floor(Math.random() * complainMessages.length)];
+    bubble.innerText = complain;
+
+    // 2️⃣ 잠깐 후 다시 메뉴 추천
+    setTimeout(() => {
+      pickMenu();
+    }, 900); // 0.9초 투덜
+  }
+
+  // 처음 페이지 들어왔을 때
+  pickMenu();
+</script>
 </body>
 </html>
