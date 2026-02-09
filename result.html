@@ -35,6 +35,7 @@
     "우동"
   ];
 
+  // 😑 투덜 멘트
   const complainMessages = [
     "아니 또 싫어?",
     "그럼 뭐 먹을 건데…",
@@ -43,30 +44,49 @@
     "하… 다시 고른다?"
   ];
 
+  // 📸 캐릭터 이미지
+  const defaultImage = "images/default.png";
+  const complainImage = "images/complain.png"; // 투덜 표정
+
   const params = new URLSearchParams(location.search);
   const type = params.get("type");
   const menus = type === "spicy" ? spicyMenus : mildMenus;
 
   const bubble = document.getElementById("bubbleText");
+  const character = document.getElementById("character");
+
+  let rerollCount = 0;
 
   function pickMenu() {
     const menu = menus[Math.floor(Math.random() * menus.length)];
     bubble.innerText = `오늘은 ${menu} 먹어라.`;
+    character.src = defaultImage;
   }
 
   function reroll() {
-    // 1️⃣ 투덜거리기
+    rerollCount++;
+
+    // 🔟 10번 넘으면 엔딩
+    if (rerollCount >= 10) {
+      bubble.innerText = "그냥 굶어라.";
+      character.src = complainImage;
+      return;
+    }
+
+    // 😑 투덜
     const complain =
       complainMessages[Math.floor(Math.random() * complainMessages.length)];
-    bubble.innerText = complain;
 
-    // 2️⃣ 잠깐 후 다시 메뉴 추천
+    bubble.innerText = complain;
+    character.src = complainImage;
+
+    // 다시 추천
     setTimeout(() => {
       pickMenu();
-    }, 900); // 0.9초 투덜
+    }, 900);
   }
 
-  // 처음 페이지 들어왔을 때
+  // 처음 진입 시
   pickMenu();
 </script>
 </body>
