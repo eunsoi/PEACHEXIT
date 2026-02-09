@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>결과</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container row">
+    <img src="character.png" class="character">
+
+    <div class="bubble" id="resultText"></div>
+  </div>
+
+  <button onclick="location.reload()">
+    싫어 다시 골라줘
+  </button>
+
+  <script>
+    const spicyMenus = [
+      "떡볶이",
+      "불닭볶음면",
+      "마라탕",
+      "김치찌개",
+      "매운 닭갈비"
+    ];
+
+    const mildMenus = [
+      "돈까스",
+      "초밥",
+      "파스타",
+      "카레",
+      "우동"
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type");
+
+    const menus = type === "spicy" ? spicyMenus : mildMenus;
+    const menu = menus[Math.floor(Math.random() * menus.length)];
+
+    document.getElementById("resultText").innerText =
+      `오늘은 ${menu} 먹어라.\n그럼 ${menu}?`;
+  </script>
+</body>
+</html>
