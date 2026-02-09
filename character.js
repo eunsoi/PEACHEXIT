@@ -28,3 +28,9 @@ const bubbleEl = document.getElementById("bubbleText");
 if (bubbleEl && Character.messagesByDate[today]) {
   bubbleEl.innerText = Character.messagesByDate[today];
 }
+function setPageMessage(message) {
+  const bubble = document.getElementById("bubbleText");
+  if (!bubble.innerText) {
+    bubble.innerText = message;
+  }
+}
