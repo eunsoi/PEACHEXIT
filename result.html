@@ -132,27 +132,32 @@
   let rerollCount = 0;
 
   function pickMenu() {
-    const menu = menus[Math.floor(Math.random() * menus.length)];
-    bubble.innerText = `오늘은 ${menu} 먹어라.`;
-    character.src = defaultImage;
-  }
+  const menu = menus[Math.floor(Math.random() * menus.length)];
+  bubble.innerText = `오늘은 ${menu} 먹어라.`;
+  character.src = defaultImage;
+
+  bubble.className = "bubble default";  // ⭐ 추가
+}
 
   function reroll() {
     rerollCount++;
 
     // 🔟 10번 넘으면 엔딩
-    if (rerollCount >= 10) {
-      bubble.innerText = "그냥 굶어라.";
-      character.src = complainImage;
-      return;
-    }
+     if (rerollCount >= 10) {
+    bubble.innerText = "그냥 굶어라.";
+    character.src = complainImage;
+    bubble.className = "bubble angry";  // ⭐ 추가
+    return;
+  }
 
     // 😑 투덜
     const complain =
-      complainMessages[Math.floor(Math.random() * complainMessages.length)];
+    complainMessages[Math.floor(Math.random() * complainMessages.length)];
 
-    bubble.innerText = complain;
-    character.src = complainImage;
+  bubble.innerText = complain;
+  character.src = complainImage;
+
+  bubble.className = "bubble grumpy";  // ⭐ 추가
 
     // 다시 추천
     setTimeout(() => {
