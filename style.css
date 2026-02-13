@@ -22,6 +22,7 @@ body {
 }
 
 .bubble {
+  position: relative;   /* ⭐ 이거 추가 */
   background: white;
   border-radius: 20px;
   padding: 16px 20px;
@@ -29,6 +30,9 @@ body {
   font-size: 16px;
   line-height: 1.5;
   white-space: pre-line;
+
+  border: 2px solid #000;
+  box-shadow: 4px 6px 0px #000;
 }
 
 button {
@@ -47,7 +51,40 @@ button {
   justify-content: center;
   gap: 14px;
 }
+/* 🐣 기본 둥근 꼬리 */
+.bubble.default::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: -10px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
 
+/* 😑 투덜 뾰족 꼬리 */
+.bubble.grumpy::after {
+  content: "";
+  position: absolute;
+  left: -14px;
+  bottom: 18px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 16px solid white;
+}
+
+/* 😡 엔딩 */
+.bubble.angry {
+  background: #ffe5e5;
+}
+
+.bubble.angry::after {
+  display: none;
+}
 button:hover {
   opacity: 0.9;
 }
