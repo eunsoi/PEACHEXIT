@@ -1,5 +1,8 @@
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+body {  
+  margin: 0;  
+  background: #fff6e5;  
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; 
+  text-align: center;  
 }
 
 .container {
