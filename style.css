@@ -1,8 +1,5 @@
 body {
-  margin: 0;
-  background: #fff6e5;
-  font-family: Arial, sans-serif;
-  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
 }
 
 .container {
@@ -22,14 +19,17 @@ body {
 }
 
 .bubble {
-  position: relative;   /* ⭐ 이거 추가 */
-  background: white;
-  border-radius: 20px;
+  position: relative;
+  background: #ffffff;
+  border-radius: 24px;
   padding: 16px 20px;
   max-width: 240px;
   font-size: 16px;
   line-height: 1.5;
   white-space: pre-line;
+
+  /* ✨ iOS 느낌 핵심 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 button {
@@ -52,35 +52,33 @@ button {
 .bubble.default::after {
   content: "";
   position: absolute;
-  left: 15px;
-  bottom: -10px;
-  width: 18px;
-  height: 18px;
-  background: white;
+  left: 20px;
+  bottom: -6px;
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
   border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* 😑 투덜 뾰족 꼬리 */
 .bubble.grumpy::after {
   content: "";
   position: absolute;
-  left: -14px;
-  bottom: 18px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 16px solid white;
+  left: 12px;
+  bottom: -8px;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* 😡 엔딩 */
 .bubble.angry {
-  background: #ffe5e5;
+  background: #fff1f1;
 }
 
 .bubble.angry::after {
   display: none;
-}
-button:hover {
-  opacity: 0.9;
 }
