@@ -30,9 +30,6 @@ body {
   font-size: 16px;
   line-height: 1.5;
   white-space: pre-line;
-
-  border: 2px solid #000;
-  box-shadow: 4px 6px 0px #000;
 }
 
 button {
@@ -61,7 +58,6 @@ button {
   height: 18px;
   background: white;
   border-radius: 50%;
-  border: 2px solid #000;
 }
 
 /* 😑 투덜 뾰족 꼬리 */
