@@ -212,4 +212,24 @@ button:active {
 }
 
 /* 모바일 */
-@media (max-width: 480
+@media (max-width: 4800px) {
+
+  .container.row {
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .bubble {
+    max-width: 240px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-group button {
+    width: 220px;
+  }
+}
