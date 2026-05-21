@@ -232,6 +232,10 @@ button:active {
   min-height: auto;
 }
 
+    .character {
+  width: 100px;
+  }
+  
   .bubble {
     max-width: 240px;
     margin-top: -10px;
