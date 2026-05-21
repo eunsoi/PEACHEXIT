@@ -12,7 +12,9 @@ const Character = {
   defaultImage: isLateNight
     ? "images/sleepy.png"
     : "images/default.png",
-
+if (isLateNight) {
+  setPageMessage("...안 자냐? 먹긴 뭘 먹어 잠이나 자라");
+}
   imagesByDate: {
     "2027-02-09": "images/happy.png",
     "2027-02-14": "images/holiday.png"
