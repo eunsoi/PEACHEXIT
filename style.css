@@ -212,7 +212,7 @@ button:active {
 }
 
 /* 모바일 */
-@media (max-width: 4800px) {
+@media (max-width: 480px) {
 
   .container.row {
     flex-direction: column;
