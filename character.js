@@ -43,7 +43,8 @@ if (bubbleEl && Character.messagesByDate[today]) {
 }
 function setPageMessage(message) {
   const bubble = document.getElementById("bubbleText");
-  if (!bubble.innerText) {
+
+  if (!bubble.innerText.trim()) {
     bubble.innerText = message;
   }
 }
