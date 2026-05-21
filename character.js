@@ -1,5 +1,5 @@
-// 📅 오늘 날짜 (한국 기준, YYYY-MM-DD)
-const today = new Date().toLocaleDateString('en-CA');
+// 📅 오늘 날짜 (무조건 YYYY-MM-DD)
+const today = new Date().toISOString().split('T')[0];
 
 // 🎭 캐릭터 설정 객체 (어렵지 않음, 설정 묶음임)
 const Character = {
@@ -26,7 +26,6 @@ const Character = {
     "2027-02-14": ".",
     "2027-03-14": "화이트데이? 네가 애냐?",
     "2027-04-01": "...뭔진 모르겠지만 선생님 바보 아니다. 안 속아.",
-    
   }
 };
 
