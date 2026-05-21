@@ -1,9 +1,17 @@
-// 📅 오늘 날짜 (무조건 YYYY-MM-DD)
+// 📅 오늘 날짜
 const today = new Date().toISOString().split('T')[0];
 
-// 🎭 캐릭터 설정 객체 (어렵지 않음, 설정 묶음임)
+// 🕒 현재 시간
+const hour = new Date().getHours();
+
+// 🌙 새벽 여부
+const isLateNight = hour >= 0 && hour < 5;
+
+// 🎭 캐릭터 설정
 const Character = {
-  defaultImage: "images/default.png",
+  defaultImage: isLateNight
+    ? "images/sleepy.png"
+    : "images/default.png",
 
   imagesByDate: {
     "2027-02-09": "images/happy.png",
