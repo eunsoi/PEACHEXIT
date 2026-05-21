@@ -218,7 +218,7 @@ button:active {
     flex-direction: column;
 
     gap: 14px;
-     flex-wrap: nowrap;
+     flex-wrap: wrap;
   }
 
   .bubble {
