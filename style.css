@@ -1,87 +1,201 @@
-body {  
-  margin: 0;  
-  background: #fff6e5;  
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; 
-  text-align: center;  
+body {
+  margin: 0;
+
+  background:
+    radial-gradient(circle at top, #fff7ea, #f4ecdd);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    sans-serif;
+
+  text-align: center;
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+
+  color: #3d3d3d;
+
+  overflow-x: hidden;
 }
 
+/* 전체 앱 영역 */
 .container {
-  padding: 20px;
+  margin-top: 40px;
+
+  padding: 28px 20px;
+
+  width: calc(100% - 32px);
+  max-width: 380px;
+
+  background: rgba(255,255,255,0.42);
+
+  border-radius: 34px;
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
 }
 
+/* 캐릭터 + 말풍선 */
 .container.row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+
+  gap: 18px;
+
+  flex-wrap: wrap;
 }
 
+/* 캐릭터 */
 .character {
-  width: 150px;
-  max-width: 42vw;
+  width: 170px;
+  max-width: 45vw;
+
+  filter:
+    drop-shadow(0 14px 18px rgba(0,0,0,0.12));
+
+  animation: float 3s ease-in-out infinite;
 }
 
+/* 말풍선 */
 .bubble {
   position: relative;
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 16px 20px;
+
+  background: rgba(255,255,255,0.95);
+
+  border-radius: 26px;
+
+  padding: 16px 22px;
+
   max-width: 240px;
+
   font-size: 16px;
-  line-height: 1.5;
+  font-weight: 500;
+
+  line-height: 1.6;
+
   white-space: pre-line;
 
-  /* ✨ iOS 느낌 핵심 */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.08);
+
+  word-break: keep-all;
 }
 
-button {
-  margin-top: 24px;
-  padding: 15px 26px;
-  font-size: 16px;
-  border: none;
-  border-radius: 30px;
-  background: #ffb703;
-  color: #333;
-  cursor: pointer;
-}
-
-.button-group {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-}
-/* 🐣 기본 둥근 꼬리 */
+/* ✨ 기본 둥근 꼬리 */
 .bubble.default::after {
   content: "";
+
   position: absolute;
-  left: 20px;
-  bottom: -6px;
-  width: 16px;
-  height: 16px;
-  background: #ffffff;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  left: 26px;
+  bottom: -7px;
+
+  width: 18px;
+  height: 18px;
+
+  background: rgba(255,255,255,0.95);
+
+  transform: rotate(45deg);
+
+  border-radius: 5px;
 }
 
-/* 😑 투덜 뾰족 꼬리 */
+/* 😑 투덜 말풍선 */
+.bubble.grumpy {
+  background: #fffaf3;
+}
+
 .bubble.grumpy::after {
   content: "";
+
   position: absolute;
-  left: 12px;
-  bottom: -8px;
-  width: 12px;
-  height: 12px;
-  background: #ffffff;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  left: 18px;
+  bottom: -7px;
+
+  width: 14px;
+  height: 14px;
+
+  background: #fffaf3;
+
+  transform: rotate(45deg);
+
+  border-radius: 3px;
 }
 
 /* 😡 엔딩 */
 .bubble.angry {
   background: #fff1f1;
+
+  color: #b14b4b;
 }
 
 .bubble.angry::after {
   display: none;
 }
+
+/* 버튼 */
+button {
+  margin-top: 30px;
+
+  padding: 17px 28px;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffc93c,
+      #ffb703
+    );
+
+  color: #4a3500;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 18px rgba(255,183,0,0.28);
+
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+
+button:active {
+  transform: scale(0.96);
+
+  box-shadow:
+    0 4px 10px rgba(255,183,0,0.18);
+}
+
+/* 버튼 그룹 */
+.button-group {
+  display: flex;
+  justify-content: center;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+}
+
+/* 상태창 추가용 */
+.status-box {
+  margin-top: 24px;
+
+  padding: 16px;
+
+  border-radius: 22px;
+
+  bac
