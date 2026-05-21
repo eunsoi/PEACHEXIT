@@ -230,7 +230,7 @@ button:active {
   gap: 14px;
 
   min-height: auto;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
     .character {
