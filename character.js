@@ -12,9 +12,7 @@ const Character = {
   defaultImage: isLateNight
     ? "images/sleepy.png"
     : "images/default.png",
-if (isLateNight) {
-  setPageMessage("...안 자냐? 먹긴 뭘 먹어 잠이나 자라");
-}
+
   imagesByDate: {
     "2027-02-09": "images/happy.png",
     "2027-02-14": "images/holiday.png"
@@ -41,16 +39,26 @@ if (isLateNight) {
 
 // 🖼 캐릭터 이미지 적용
 const characterEl = document.getElementById("character");
+
 if (characterEl) {
   characterEl.src =
     Character.imagesByDate[today] || Character.defaultImage;
 }
 
-// 💬 날짜 전용 멘트 (페이지 멘트로 덮어쓸 수 있음)
+// 💬 날짜 전용 멘트
 const bubbleEl = document.getElementById("bubbleText");
+
 if (bubbleEl && Character.messagesByDate[today]) {
   bubbleEl.innerText = Character.messagesByDate[today];
 }
+
+// 🌙 새벽 전용 멘트
+if (isLateNight && bubbleEl && !bubbleEl.innerText.trim()) {
+  bubbleEl.innerText =
+    "...안 자냐? 먹긴 뭘 먹어. 잠이나 자라.";
+}
+
+// 💬 페이지 기본 멘트
 function setPageMessage(message) {
   const bubble = document.getElementById("bubbleText");
 
@@ -58,5 +66,6 @@ function setPageMessage(message) {
     bubble.innerText = message;
   }
 }
+
 console.log(today);
 console.log(Character.defaultImage);
