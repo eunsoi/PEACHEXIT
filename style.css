@@ -28,7 +28,11 @@ body {
 
   padding: 30px 22px;
 
-  background: rgba(255,255,255,0.38);
+  background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.52),
+      rgba(255,255,255,0.32)
+    );
 
   border-radius: 36px;
 
@@ -78,7 +82,9 @@ body {
 /* 말풍선 */
 .bubble {
   position: relative;
-
+  
+  margin-top: -10px;
+  
   background: rgba(255,255,255,0.95);
 
   border-radius: 26px;
