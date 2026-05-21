@@ -48,3 +48,5 @@ function setPageMessage(message) {
     bubble.innerText = message;
   }
 }
+console.log(today);
+console.log(Character.defaultImage);
